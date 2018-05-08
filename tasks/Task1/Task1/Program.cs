@@ -15,8 +15,7 @@ namespace Task1
 
             mystring = Console.ReadLine();
             Console.WriteLine("Danke für die Eingabe. \n");
-            Console.WriteLine("Ihre Eingabe war :");
-            Console.WriteLine(mystring);
+            Console.WriteLine("Ihre Eingabe war :"+mystring);
         }
     }
 }
