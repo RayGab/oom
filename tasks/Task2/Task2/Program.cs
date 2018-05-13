@@ -36,6 +36,7 @@ namespace Task2
         public int CountActive => _activationcount;
         public void ChangeState()
         {
+            //only count up if the mission was active and is set inactive now.
             _activationcount += _isactive ? 1 : 0;
             _isactive = !_isactive;
         }
@@ -48,7 +49,7 @@ namespace Task2
             {
                 _points = value;
                 // check after adding if _points has fallen underneath the floor
-                if (_points <= 0) throw new Exception("points fallen unter Minimum");
+                if (_points <= 0) throw new Exception("points have fallen under allowed minimum");
             }
         }
         /********************************* Construcor ************************************/
@@ -94,8 +95,11 @@ namespace Task2
                 two.ChangeState();
                 WriteLine("Print two");
                 WriteLine("Missionsname :" + two.Name + " \t active :" + two.State + " \t points: " + two.Points + "\tcount of previous activations :" + two.CountActive);
-                WriteLine("Change state again. Number of previous activations should be 1.");
-                two.ChangeState();
+                WriteLine("Change state for 10 times. Number of previous activations should be 5.");
+                for (var i = 0; i < 10; i++) {
+                    two.ChangeState();
+                    WriteLine("missionsname :" + two.Name + " \t active :" + two.State + " \t points: " + two.Points + "\tcount of previous activations :" + two.CountActive);
+                };
                 WriteLine("And add a negative number to points of two");
                 two.Points += -20;
                 WriteLine("missionsname :" + two.Name + " \t active :" + two.State + " \t points: " + two.Points + "\tcount of previous activations :" + two.CountActive);
@@ -106,7 +110,7 @@ namespace Task2
             }
             catch (Exception e)
             {
-                WriteLine("error :" + e.Message);
+                WriteLine("error : " + e.Message);
             }
         }
     }
