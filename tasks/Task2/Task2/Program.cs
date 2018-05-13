@@ -42,8 +42,7 @@ namespace Task2
         public decimal Points {
             get
             {
-                if (_points <= 0) throw new Exception("points sind unter Minimum");
-                return _points;
+                 return _points;
             }
             set
             {
