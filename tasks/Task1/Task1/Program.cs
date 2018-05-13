@@ -9,7 +9,13 @@ namespace Task1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World");
+            string mystring;
+            Console.WriteLine("Hello World\n");
+            Console.WriteLine("Bitte geben Sie einen Buchstaben ein:\n");
+
+            mystring = Console.ReadLine();
+            Console.WriteLine("Danke für die Eingabe. \n");
+            Console.WriteLine("Ihre Eingabe war :"+mystring);
         }
     }
 }
