@@ -98,6 +98,7 @@ namespace Task2
                 WriteLine("Change state for 10 times. Number of previous activations should be 5.");
                 for (var i = 0; i < 10; i++) {
                     two.ChangeState();
+                    two.Points += 1;
                     WriteLine("missionsname :" + two.Name + " \t active :" + two.State + " \t points: " + two.Points + "\tcount of previous activations :" + two.CountActive);
                 };
                 WriteLine("And add a negative number to points of two");
