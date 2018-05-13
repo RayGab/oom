@@ -27,16 +27,16 @@ namespace Task2
          * a mission should only be set to active if there is no other mission available
          * with a counter less than the current selected one
          */
-        private int activationcount = 0;
+        private int _activationcount = 0;
         // probably need to add Placement on Map maybe with 3dVector Struct?
         // maybe we can also get the missionname out of the file, but I need to figure out how, so not implemented yet
         /********************************* Properties ************************************/
         public Boolean State => _isactive;
         public string Name => _name;
-        public int CountActive => activationcount;
+        public int CountActive => _activationcount;
         public void ChangeState()
         {
-            activationcount += _isactive ? 1 : 0;
+            _activationcount += _isactive ? 1 : 0;
             _isactive = !_isactive;
         }
         public decimal Points {
