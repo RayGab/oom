@@ -56,6 +56,7 @@ namespace Task3
                 _points = value;
                 // check after adding if _points has fallen underneath the floor
                 if (_points <= 0) throw new Exception("points have fallen under allowed minimum");
+                if (_points >= 100) throw new Exception("points are above allowed max");
             }
         }
         /********************************* Construcor ************************************/
