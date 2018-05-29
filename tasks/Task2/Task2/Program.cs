@@ -11,9 +11,13 @@ using static System.Console;
  * Version : 0-0-0
  * Date : 13-05-18
  */
-namespace Task2
+namespace Task3
 {
-    public class Mission
+    interface Game
+    {
+       void ChangeState();
+    }
+    public class Mission : Game // consists of one or more Tasks
     {
 
         /******************************** Attributes/ Fields *****************************/
@@ -74,6 +78,34 @@ namespace Task2
         }
 
     }
+    public class SideMission : Game
+    {
+        // Fields
+        private Boolean _isactive = false;
+        private string _name;
+        private Mission parent;
+        //Method
+        public string Name => _name;
+        public string Parent_name => parent.Name;
+        public void ChangeState()
+        {
+            if (parent.State == true) {
+                _isactive = true;
+            } else {
+                _isactive = false;
+            };
+        }
+        // Constructor
+        public SideMission(string Taskname, Mission parent)
+        {
+            if(Taskname == null || Taskname.Length == 0)
+            {
+                throw new Exception("missing Sidemission name");
+            }
+            if (parent == null) throw new Exception(" SideMission missing parent Mission");
+        }
+    }
+
     class Program
     {
         static void Main(string[] args)
