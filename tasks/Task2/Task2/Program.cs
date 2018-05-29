@@ -72,6 +72,10 @@ namespace Task3
             {
                 throw new Exception("missions must contain points at initialisation");
             }
+            if (points >= 100)
+            {
+                throw new Exception("mission cannot have more than 100 points at any time");
+            }
             // initialise to default
             _isactive = false;
             // initialise with params
